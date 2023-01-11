@@ -143,7 +143,7 @@ Tomcat6 :
 
 # SMB - 445
 
-** Version if nmap didn´t detect it**
+**Version if nmap didn´t detect it**
 > sudo ngrep -i -d <INTERFACE> 's.?a.?m.?b.?a.*[[:digit:]]' port 139
 > smbclient -L <IP>
 
